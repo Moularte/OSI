@@ -5,48 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TwojeFinanse24</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        .slideshow-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 100%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .slide {
-            display: none;
-            width: 80%;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        .slide img {
-            width: 60%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .slide-text {
-            width: 40%;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            text-align: center;
-        }
-        .fade {
-            animation: fadeEffect 10s infinite;
-        }
-        @keyframes fadeEffect {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-    </style>
 </head>
 <body>
     <header id="masthead">
@@ -61,39 +19,57 @@
         </nav>
     </header>
     
-    <div class="slideshow-container">
-        <div class="slide fade">
-            <img src="slide1.jpg" alt="Najlepsze Konta Osobiste">
-            <div class="slide-text">Najlepsze Konta Osobiste - Marzec 2025</div>
-        </div>
-        <div class="slide fade">
-            <img src="img1.jpg" alt="Najlepsze Lokaty">
-            <div class="slide-text">Ranking Lokat - Marzec 2025</div>
-        </div>
-        <div class="slide fade">
-            <img src="slide3.jpg" alt="Kredyty Gotówkowe">
-            <div class="slide-text">Najkorzystniejsze Kredyty - Marzec 2025</div>
-        </div>
+    <div id="container">
+        <aside id="left_col">
+            <section class="module">
+                <h3 class="module_title">Filtry</h3>
+                <div class="module_content">
+                    <label><input type="radio" name="account_type" value="savings"> Konto oszczędnościowe</label><br>
+                    <label><input type="radio" name="account_type" value="deposit"> Lokata</label><br>
+                    <label>Oprocentowanie: <input type="number" min="0" max="10" step="0.1"> %</label><br>
+                    <label>Czas trwania: 
+                        <select>
+                            <option value="3">3 miesiące</option>
+                            <option value="6">6 miesięcy</option>
+                            <option value="12">12 miesięcy</option>
+                            <option value="24">24 miesiące</option>
+                        </select>
+                    </label><br>
+                    <label><input type="radio" name="interest_type" value="monthly"> Odsetki naliczane co miesiąc</label><br>
+                    <label><input type="radio" name="interest_type" value="end"> Odsetki naliczane na koniec lokaty</label><br>
+                    <button type="button">Filtruj</button>
+                </div>
+            </section>
+        </aside>
+    
+        <main id="page_content">
+            <section class="article">
+                <h2 class="article_title">Wyszukane oferty</h2>
+                <div class="offer">
+                    <img src="bankING.jpg" alt="Bank ING Logo">
+                    <div class="offer_details">
+                        <h3>Bank ING - Konto Oszczędnościowe</h3>
+                        <p>Czas trwania: 12 miesięcy</p>
+                        <p>Oprocentowanie: 4.5%</p>
+                        <p>Promocja ważna do: 31 marca 2025</p>
+                    </div>
+                    <button class="offer_button">Wybierz ofertę</button>
+                </div>
+                <div class="offer">
+                    <img src="bank_millenium.svg" alt="Bank Millenium Logo">
+                    <div class="offer_details">
+                        <h3>Bank Millenium - Lokata 6M</h3>
+                        <p>Czas trwania: 6 miesięcy</p>
+                        <p>Oprocentowanie: 3.8%</p>
+                        <p>Promocja ważna do: 15 kwietnia 2025</p>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
     
     <footer id="footer">
         <p>&copy; 2025 TwojeFinanse24. Wszelkie prawa zastrzeżone.</p>
     </footer>
-    
-    <script>
-        let slideIndex = 0;
-        showSlides();
-        
-        function showSlides() {
-            let slides = document.getElementsByClassName("slide");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            slides[slideIndex - 1].style.display = "flex";
-            setTimeout(showSlides, 10000);
-        }
-    </script>
 </body>
 </html>

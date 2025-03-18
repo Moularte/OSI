@@ -18,49 +18,38 @@ a {
 }
 
 a:hover {
-    color: #0056b3;
+    color: #FAB800;
 }
 
 #masthead {
     background-color: #183153;
     color: #fff;
-    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    width: 100%;
+    /* padding: 15px 20px; */
+}
+
+.logo {
+    font-size: 25px;
+    padding: 15px;
 }
 
 #nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 
 .nav-link {
     position: relative;
     padding: 10px 15px;
     font-weight: 600;
-}
-
-.dropdown-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #183153;
-    color: #fff;
-    list-style: none;
-    padding: 10px 0;
-    display: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.nav-link:hover .dropdown-list {
-    display: block;
 }
 
 #container {
@@ -70,22 +59,67 @@ a:hover {
     flex: 1;
 }
 
-#left_col, #right_col {
+#left_col {
     width: 20%;
-    background: #fff;
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #D6E7FE;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
+
+}
+.module {
+    padding: 10px 0px;
 }
 
 #page_content {
-    width: 55%;
+    width: 70%;
     background: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
+.offer {
+    display: flex;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.offer img {
+    width: 150px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.offer_details {
+    flex: 1;
+}
+.category {
+    font-weight: 300;
+}
+.offer_button {
+    background-color: #183153;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.offer_button:hover {
+    background-color: #12223D;
+}
 .article_title {
     font-size: 1.5em;
     font-weight: bold;
@@ -100,9 +134,7 @@ a:hover {
     background-color: #353B50;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
     margin-top: 20px;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
