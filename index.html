@@ -1,21 +1,99 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="pl">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name="title" content="Auto-Serwis Maj | Profesjonalny serwis samochodow marki BMW">
-    <meta name="description" content="Specjalizujemy sie w naprawach oraz serwisie pojazdow marki Bmw">
-    <title>Auto-Serwis Maj</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TwojeFinanse24</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .slideshow-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            width: 80%;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .slide img {
+            width: 60%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .slide-text {
+            width: 40%;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .fade {
+            animation: fadeEffect 10s infinite;
+        }
+        @keyframes fadeEffect {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
 </head>
 <body>
-    <div id="content">
-        <div>
-            <h1>Auto-Serwis Maj</h1>
-            
+    <header id="masthead">
+        <a href="/" class="logo">TwojeFinanse24</a>
+        <nav>
+            <ul id="nav-links">
+                <li class="nav-link"><a href="#">Konta</a></li>
+                <li class="nav-link"><a href="#">Oszczędności</a></li>
+                <li class="nav-link"><a href="#">Kredyty</a></li>
+                <li class="nav-link"><a href="#">Banki</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="slide1.jpg" alt="Najlepsze Konta Osobiste">
+            <div class="slide-text">Najlepsze Konta Osobiste - Marzec 2025</div>
+        </div>
+        <div class="slide fade">
+            <img src="img1.jpg" alt="Najlepsze Lokaty">
+            <div class="slide-text">Ranking Lokat - Marzec 2025</div>
+        </div>
+        <div class="slide fade">
+            <img src="slide3.jpg" alt="Kredyty Gotówkowe">
+            <div class="slide-text">Najkorzystniejsze Kredyty - Marzec 2025</div>
         </div>
     </div>
+    
+    <footer id="footer">
+        <p>&copy; 2025 TwojeFinanse24. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "flex";
+            setTimeout(showSlides, 10000);
+        }
+    </script>
 </body>
 </html>
