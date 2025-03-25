@@ -34,7 +34,7 @@ a:hover {
     /* padding: 15px 20px; */
 }
 
-.logo {
+#logo {
     font-size: 25px;
     padding: 15px;
 }
@@ -53,18 +53,18 @@ a:hover {
     font-weight: 600;
 }
 
-.navlink ul li a {
+.header_dropdown_menu ul li a {
     width: 100%;
     height: 100%;
     display: inline-block;
     padding: 0;
     margin: 0;
 }
-.nav-link ul li {
+.header_dropdown_menu ul li {
     padding: .5rem;
 }
-.dropdown-list{
-    width: fit-content;
+.header_dropdown_menu{
+    width: 50%;
     position: absolute;
     text-align: center;
     list-style: none;
@@ -72,18 +72,22 @@ a:hover {
     padding: 0;
     display: none;
 }
-.sub-dropdown-list{
+.sub_dropdown_menu_list{
     list-style-type: none;
     color: #333;
     background-color: #D6E7FE;
 }
-.sub-dropdown-list a{
+.sub_dropdown_menu_list a{
     color: #333;
 }
-.nav-link a:focus +ul,
-.nav-link a:hover + ul,
-.nav-link ul:hover {
-    display: flex;;
+.header_dropdown_menu a:focus + ul,
+.header_dropdown_menu a:hover + ul,
+.header_dropdown_menu ul:hover {
+    display: flex;
+}
+.header_dropdown_menu .sub_dropdown_menu_list {
+    display: flex;
+    flex-direction: column;
 }
 .breadcrumb-container {
     background: #f8f9fa;
@@ -150,11 +154,10 @@ a:hover {
 }
 
 .module {
+    display: flex;
+    flex-direction: column;
     padding: 10px 0;
-}
-.module_title {
-    margin: 0;
-    font-weight: bold;
+    gap: 2rem;
 }
 
 .module_content {
@@ -162,7 +165,21 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     padding-left: 5px;
-    gap: 0.5rem;
+    gap: 2rem;
+}
+.module_title {
+    font-weight: bold;
+}
+.module_content {
+    display: flex;
+    flex-direction: column;
+}
+.search_form_radio {
+    display: flex;
+    flex-direction: column;
+}
+.search_form_label {
+    margin-bottom: .5rem
 }
 
 .form-radio-control {
@@ -212,15 +229,24 @@ input[type="radio"]:checked::before {
         transform: rotate(45deg) scale(1);
     }
 }
-
-.select-input {
+.search_options_select {
     display: flex;
+    flex-direction: column;
+}
+.search_options_select .select-input {
+    display: flex;
+    flex-direction: row;
     align-items: stretch;
     cursor: pointer;
     position: relative;
 }
-
-.select_options {
+#period_input_field {
+    padding: .3rem;
+    font-size: 16px;
+    text-align: center;
+    width: 80%;
+} 
+.search_options_select .select_options {
     display: none;
     position: absolute;
     background: white;
@@ -232,11 +258,11 @@ input[type="radio"]:checked::before {
 }
 
 .arrow-down {
-    width: 20px;
+    width: 10%;
     /* height: 20px; */
     background-color: #183153;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 0 5px 5px 0;
     position: relative;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -271,12 +297,14 @@ input[type="radio"]:checked::before {
     display: block;
 }
 
-#deposit_amount {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+#deposit_amt {
+    width: 70%;
+    text-align: center;
+    padding: .3rem;
+    font-size: 16px;
 }
-/* Stylizacja pól input */
+
+/* Stylizacja pól input
 input[type="text"], input[type="number"] {
     width: 70%;
     text-align: center;
@@ -286,25 +314,38 @@ input[type="text"], input[type="number"] {
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s ease;
-}
+} */
 
 input[type="text"]:focus, input[type="number"]:focus {
     border-color: #183153;
 }
 
-/* Stylizacja przycisków input_change_button */
-.input_change_button {
+.search_form_fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.search_form_inner {
+    display: flex;
+    flex-direction: row;
+}
+.search_form_fieldset .input_change_button {
     background-color: #183153;
-    width:auto; 
+    width:10%; 
     color: white;
     border: none;
     padding: 5px 7px;
-    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+#minus_input_button {
+    border-radius: 5px 0 0 5px;
+}
+#plus_input_button {
+    border-radius: 0 5px 5px 0;
+}
 .input_change_button:hover {
     background-color: #12223D;
 }
@@ -313,6 +354,16 @@ input[type="text"]:focus, input[type="number"]:focus {
     transform: scale(0.95);
 }
 
+#search_form_submit_btn {
+    background-color: #183153;
+    align-self: center;
+    padding: 8px;
+    width: 30%;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+}
 #page_content {
     width: 72%;
     background: #fff;
