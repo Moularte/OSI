@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="TwojeFinanse24" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://moularte.github.io/OSI/" />
+    <title>TwojeFinanse24</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="masthead">
+        <h1><a href="/" class="logo">TwojeFinanse24</a></h1>
+        <nav>
+            <ul id="nav-links">
+                <li class="nav-link"><a href="#">Konta</a>
+                    <ul class="dropdown-list">
+                        <li>Konta Osobiste
+                            <ul class="sub-dropdown-list">
+                                <li><a href="">Konto dla dziecka</a></li>
+                                <li><a href="">Konto dla młodych</a></li>
+                                <li><a href="">Konto dla seniorów</a></li>
+                                <li><a href="">Konto Premium</a></li>
+                                <li><a href="">Darmowe Konto Osobiste</a></li>
+                            </ul>
+                        </li>
+                        <li>Firmowe</li>
+                    </ul>
+                </li>
+                <li class="nav-link"><a href="#">Oszczędności</a></li>
+                <li class="nav-link"><a href="#">Kredyty</a></li>
+                <li class="nav-link"><a href="#">Banki</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Breadcrumb umieszczone pod nagłówkiem -->
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <ul class="breadcrumb">
+            <li class="home_link"><a href="#">TwojeFinanse24</a></li>
+            <li><a href="/konta">Oszczędności</a></li>
+            <li>Ranking Kont Oszczędnościowych</li>
+        </ul>
+    </nav>
+    
+    
+    <div id="container">
+        <aside id="left_col">
+            <section class="module">
+                <h3 class="module_title">Filtry</h3>
+                <div class="module_content">
+                    <div class="search_options_label">Typ produktu</div>
+                    <label class="form-radio-control"><input type="radio" name="account_type" value="savings" checked> Konto oszczędnościowe</label>
+                    <label class="form-radio-control"><input type="radio" name="account_type" value="deposit"> Lokata</label>
+                    <div class="search_options_label">Czas trwania: </div>
+                    <div class="select-container">
+                        <div class="select-input">
+                            <input type="text" value="Dowolny" readonly>
+                            <button class="arrow-down"></button>
+                        </div>
+                        <div class="select_options">
+                            <div class="select_options-option -selected">Dowolny</div>
+                            <div class="select_options-option">do 1 miesiąca</div>
+                            <div class="select_options-option">od 1 do 3 miesięcy</div>
+                            <div class="select_options-option">od 3 do 6 miesięcy</div>
+                            <div class="select_options-option">od 6 do 12 miesięcy</div>
+                            <div class="select_options-option">od 12 miesięcy</div>
+                        </div>
+                    </div>
+                    <h4>
+                        Kapitalizacja odsetek:
+                    </h4>
+                    <label><input type="radio" name="interest_type" value="monthly" checked> Miesięczna</label>
+                    <label><input type="radio" name="interest_type" value="monthly"> Kwartalna</label>
+                    <label><input type="radio" name="interest_type" value="end"> Na zakończenie umowy</label>
+                    <h4>Kwota lokaty</h4>
+                    <label id="deposit_amount">
+                        <button type="button" onclick="ChngAmt('-')" class="input_change_button" id="minus_input_button">-</button>
+                        <input id="deposit_amt" type="text" value="10 000 zł" autocomplete="off">
+                        <button type="button" onclick="ChngAmt('+')" class="input_change_button" id="plus_input_button">+</button>
+                    </label>
+                    <input type="button" value="Filtruj">
+                </div>
+            </section>
+        </aside>
+    
+        <main id="page_content">
+            <section class="article">
+                <h2 class="article_title">Wyszukane oferty</h2>
+                
+                <div class="offer">
+                    <img src="credit-agricole.png" alt="Credit-Agricole Logo">
+                    <div class="offer_details">
+                        <h3>Credit Agricole- Lokata Powitalna</h3>
+                        <p>Czas trwania: 3 miesiące</p>
+                        <p>Oprocentowanie: 8%</p>
+                        <p>Promocja ważna do: 31 marca 2025</p>
+                    </div>
+                    <button class="offer_button" onclick="location.href='https://www.credit-agricole.pl/klienci-indywidualni/oszczednosci/lokata-powitalna'">Wybierz ofertę</button>
+                </div>
+
+                <div class="offer">
+                    <img src="bankING.jpg" alt="Bank ING Logo">
+                    <div class="offer_details">
+                        <h3>Bank ING - Otwarte Konto Oszczednosciowe Bonus</h3>
+                        <p>Czas trwania: 3 miesiące</p>
+                        <p>Oprocentowanie: 7%</p>
+                        <p>Promocja ważna do: 2 kwietnia 2025</p>
+                    </div>
+                    <div class="offer-action">
+                        <button class="offer_button" onclick="location.href='https://www.ing.pl/indywidualni/inwestycje-i-oszczednosci/otwarte-konto-oszczednosciowe-bonus'" type="button">Wybierz ofertę</button>
+                    </div>
+                    
+                </div>
+                
+                <div class="offer">
+                    <img src="alior_bank.svg" alt="Alior Bank Logo">
+                    <div class="offer_details">
+                        <h3>Alior Bank - Lokata 6M</h3>
+                        <p>Czas trwania: 6 miesięcy</p>
+                        <p>Oprocentowanie: 3.8%</p>
+                        <p>Promocja ważna do: 15 kwietnia 2025</p>
+                    </div>
+                    <button class="offer_button">Wybierz ofertę</button>
+                </div>
+                <div class="offer">
+                    <img src="velo_bank.svg" alt="VeloBank Logo">
+                    <div class="offer_details">
+                        <h3>VeloBank - Lokata 6M</h3>
+                        <p>Czas trwania: 6 miesięcy</p>
+                        <p>Oprocentowanie: 3.8%</p>
+                        <p>Promocja ważna do: 15 kwietnia 2025</p>
+                    </div>
+                    <button class="offer_button">Wybierz ofertę</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer id="footer">
+        <p>&copy; 2025 TwojeFinanse24. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        function ChngAmt(charset){
+            let input = document.getElementById("deposit_amt");
+            let amtValue = parseInt(input.value.replace(/\s/g, '')) || 0; 
+
+            if (charset == '-') {
+                if (amtValue <= 10000) {
+                    input.value = (1000).toLocaleString('pl-PL') + ' zł'; 
+                } else {
+                    input.value = (amtValue - 10000).toLocaleString('pl-PL') + ' zł';
+                }
+            }
+
+            if (charset == '+') {
+                input.value = (amtValue + 10000).toLocaleString('pl-PL') + ' zł';
+            }
+        }
+    </script>
+</body>
+</html>
