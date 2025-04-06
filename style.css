@@ -216,7 +216,7 @@ nav ul#nav-links {
     color: #004080;
 }
 .financial-article .article-text {
-    flex: 1;
+    /* flex: 1; */
     max-width: 65%;
 }
 
@@ -229,8 +229,8 @@ nav ul#nav-links {
 .financial-article .article-text p {
     font-size: 1rem;
     color: #444;
+    margin-bottom: 20px;
 }
-
 .financial-article img {
     width: 30%;
     max-height: 250px;
@@ -238,9 +238,11 @@ nav ul#nav-links {
     border-radius: 8px;
 }
 .financial-article a {
-    color: #007bff;
+    color: #fff;
+    background-color: #183153;
     text-decoration: none;
     font-weight: bold;
+    padding: .5rem;
 }
 .financial-article a:hover {
     text-decoration: underline;
