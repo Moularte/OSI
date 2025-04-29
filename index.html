@@ -8,17 +8,18 @@
 </head>
 <body>
     <header id="masthead">
-        <div class="masthead_content">
-            <a href="/" id="logo">TwojeFinanse24</a>
+        <div id="masthead_content">
+            <a href="#" id="logo">TwojeFinanse24</a>
             <nav>
                 <div id="nav_links">
                     <div class="nav_link">
                         <a href="#">Konta</a>
                         
                         <div class="header_dropdown_menu">
-                            <div class="header_dropdown_menu_label">
-                                Konta Osobiste
-                            </div> 
+                            <div class="header_dropdown_menu_element">
+                                <div class="header_dropdown_menu_label">
+                                    Konta Osobiste
+                                </div> 
                                 <ul class="sub_dropdown_menu_list">
                                     <li><a href="">Konto dla dziecka</a></li>
                                     <li><a href="">Konto dla młodych</a></li>
@@ -26,12 +27,21 @@
                                     <li><a href="">Konto Premium</a></li>
                                     <li><a href="">Darmowe Konto Osobiste</a></li>
                                 </ul>
-                            <div class="header_dropdown_menu_label">
-                                Konta Firmowe
                             </div>
+                            <div class="header_dropdown_menu_element">
+                                <div class="header_dropdown_menu_label">
+                                    Konta Firmowe
+                                </div>
+                                <ul class="sub_dropdown_menu_list">
+                                    <li><a href="">Ranking kont firmowych </a></li>
+                                    <li><a href="">2</a></li>
+                                    <li><a href="">3</a></li>
+                                </ul>
+                            </div>
+                            
                         </div>
                     </div>
-                    <div class="nav-link"><a href="#">Oszczędności</a></div>
+                    <div class="nav_link"><a href="#">Oszczędności</a></div>
                     <div class="nav_link"><a href="#">Kredyty</a></div>
                     <div class="nav_link"><a href="#">Banki</a></div>
                 </div>
@@ -64,16 +74,17 @@
                         <label class="search_form_label">Czas trwania:</label>
                         <div class="select-input">
                             <input id="period_input_field" type="text" value="Dowolny" readonly>
-                            <button class="arrow-down" ></button>
-                        </div>
-                        <div class="select_options">
-                            <div class="select_options-option -selected">Dowolny</div>
-                            <div class="select_options-option">do 1 miesiąca</div>
-                            <div class="select_options-option">od 1 do 3 miesięcy</div>
-                            <div class="select_options-option">od 3 do 6 miesięcy</div>
-                            <div class="select_options-option">od 6 do 12 miesięcy</div>
-                            <div class="select_options-option">od 12 miesięcy</div>
-                        </div>
+                            <input type="checkbox" id="period_toggle" class="select-toggle">
+                            <label for="period_toggle" class="arrow-down"></label>
+                            <div class="select_options">
+                                <div class="select_options-option">Dowolny</div>
+                                <div class="select_options-option">do 1 miesiąca</div>
+                                <div class="select_options-option">od 1 do 3 miesięcy</div>
+                                <div class="select_options-option">od 3 do 6 miesięcy</div>
+                                <div class="select_options-option">od 6 do 12 miesięcy</div>
+                                <div class="select_options-option">od 12 miesięcy</div>
+                            </div>
+                        </div>             
                     </div>
                     <div class="search_form_radio">
                         <label class="search_form_label">Kapitalizacja odsetek:</label>
@@ -168,6 +179,29 @@
                 input.value = (amtValue + 10000).toLocaleString('pl-PL') + ' zł';
             }
         }
-    </script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.getElementById('period_toggle');
+        const options = document.querySelectorAll('.select_options-option');
+        const inputField = document.getElementById('period_input_field');
+    
+        // Zamknij dropdown po wybraniu opcji
+        options.forEach(option => {
+            option.addEventListener('click', function() {
+                inputField.value = this.textContent;
+                toggle.checked = false; // Zamykamy dropdown
+            });
+        });
+    
+        // Zamknij dropdown po kliknięciu poza select-input
+        document.addEventListener('click', function(e) {
+            const selectInput = document.querySelector('.select-input');
+            if (!selectInput.contains(e.target)) {
+                toggle.checked = false;
+            }
+        });
+    });
+    
+</script>
 </body>
 </html>
