@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Najlepsze konta oszczędnościowe – Oprocentowanie i oferty | TwojeFinanse24">
+    <meta name="description" content="Zobacz, które konto oszczędnościowe oferuje najwyższe oprocentowanie. Porównaj warunki i wybierz najlepszą opcję dla swoich oszczędności.">
+    <meta property="og:title" content="Ranking kont i kredytów – Najlepsze oferty | TwojeFinanse24">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://twojefinanse24.pl/">
+    <meta property="og:image" content="https://twojefinanse24.pl/images/og-image.jpg">
+    <meta name="google-site-verification" content="xj32X8kr5jePgFtHv4GzHaS8xukNGsc0AqwiSNMqONY" />
+    <title>TwojeFinanse24</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1BJH6014VN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1BJH6014VN');
+</script>
+
+    
+<body>
+    <header id="masthead">
+        <div id="masthead_content">
+            <a href="/index.html" id="logo">TwojeFinanse24</a>
+            <nav>
+                <div id="nav_links">
+                    <div class="nav_link">
+                        <a href="#">Konta</a>
+                        
+                        <div class="header_dropdown_menu">
+                            <div class="header_dropdown_menu_element">
+                                <div class="header_dropdown_menu_label">
+                                    Konta Osobiste
+                                </div> 
+                                <ul class="sub_dropdown_menu_list">
+                                    <li><a href="">Konto dla dziecka</a></li>
+                                    <li><a href="">Konto dla młodych</a></li>
+                                    <li><a href="">Konto dla seniorów</a></li>
+                                    <li><a href="">Konto Premium</a></li>
+                                    <li><a href="">Darmowe Konto Osobiste</a></li>
+                                </ul>
+                            </div>
+                            <div class="header_dropdown_menu_element">
+                                <div class="header_dropdown_menu_label">
+                                    Konta Firmowe
+                                </div>
+                                <ul class="sub_dropdown_menu_list">
+                                    <li><a href="">Ranking kont firmowych </a></li>
+                                    <li><a href="">2</a></li>
+                                    <li><a href="">3</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="nav_link"><a href="#">Oszczędności</a></div>
+                    <div class="nav_link"><a href="#">Kredyty</a></div>
+                    <div class="nav_link"><a href="#">Banki</a></div>
+                </div>
+            </nav>
+        </div>
+        
+    </header>
+    
+    <!-- Breadcrumb umieszczone pod nagłówkiem -->
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <ul class="breadcrumb">
+            <li class="home_link"><a href="#">TwojeFinanse24</a></li>
+            <li><a href="/konta">Oszczędności</a></li>
+            <li>Ranking Kont Oszczędnościowych</li>
+        </ul>
+    </nav>
+    
+    
+    <div id="container">
+        <aside id="left_col">
+            <section class="module">
+                <div class="module_title">Filtry</div>
+                <div class="module_content">
+                    <div class="search_form_radio">
+                        <label class="search_form_label">Typ produktu:</label>
+                        <label class="form-radio-control"><input type="radio" name="account_type" value="savings" checked> Konto oszczędnościowe</label>
+                        <label class="form-radio-control"><input type="radio" name="account_type" value="deposit"> Lokata</label>
+                    </div>
+                    <div class="search_options_select">
+                        <label class="search_form_label">Czas trwania:</label>
+                        <div class="select-input">
+                            <input id="period_input_field" type="text" value="Dowolny" readonly>
+                            <input type="checkbox" id="period_toggle" class="select-toggle">
+                            <label for="period_toggle" class="arrow-down"></label>
+                            <div class="select_options">
+                                <div class="select_options-option">Dowolny</div>
+                                <div class="select_options-option">do 1 miesiąca</div>
+                                <div class="select_options-option">od 1 do 3 miesięcy</div>
+                                <div class="select_options-option">od 3 do 6 miesięcy</div>
+                                <div class="select_options-option">od 6 do 12 miesięcy</div>
+                                <div class="select_options-option">od 12 miesięcy</div>
+                            </div>
+                        </div>             
+                    </div>
+                    <div class="search_form_radio">
+                        <label class="search_form_label">Kapitalizacja odsetek:</label>
+                        <label><input type="radio" name="interest_type" value="quarterly" checked> Miesięczna</label>
+                        <label><input type="radio" name="interest_type" value="monthly"> Kwartalna</label>
+                        <label><input type="radio" name="interest_type" value="end"> Na zakończenie umowy</label>
+                    </div>
+                    <div class="search_form_fieldset">
+                        <label class="search_form_label">Kwota:</label>
+                        <div class="search_form_inner">
+                            <button type="button" onclick="ChngAmt('-')" class="input_change_button" id="minus_input_button">-</button>
+                            <input id="deposit_amt" type="text" value="10 000 zł" autocomplete="off">
+                            <button type="button" onclick="ChngAmt('+')" class="input_change_button" id="plus_input_button">+</button>
+                        </div>
+                    </div>
+                    <button type="button" value="Filtruj" id="search_form_submit_btn">Wyszukaj</button>
+                </div>
+            </section>
+        </aside>
+    
+        <main id="page_content">
+            <section class="article">
+                <h2 class="article_title">Wyszukane oferty</h2>
+                
+                <div class="offer">
+                    <img src="credit-agricole.png" alt="Credit-Agricole Logo">
+                    <div class="offer_details">
+                        <h3>Credit Agricole- Lokata Powitalna</h3>
+                        <p>Czas trwania: 3 miesiące</p>
+                        <p>Oprocentowanie: 8%</p>
+                        <p>Promocja ważna do: 31 marca 2025</p>
+                    </div>
+                    <button class="offer_button" onclick="location.href='https://www.credit-agricole.pl/klienci-indywidualni/oszczednosci/lokata-powitalna'">Wybierz ofertę</button>
+                </div>
+
+                <div class="offer">
+                    <img src="bankING.jpg" alt="Bank ING Logo">
+                    <div class="offer_details">
+                        <h3>Bank ING - Otwarte Konto Oszczednosciowe Bonus</h3>
+                        <p>Czas trwania: 3 miesiące</p>
+                        <p>Oprocentowanie: 7%</p>
+                        <p>Promocja ważna do: 2 kwietnia 2025</p>
+                    </div>
+                    <div class="offer-action">
+                        <button class="offer_button" onclick="location.href='https://www.ing.pl/indywidualni/inwestycje-i-oszczednosci/otwarte-konto-oszczednosciowe-bonus'" type="button">Wybierz ofertę</button>
+                    </div>
+                    
+                </div>
+                
+                <div class="offer">
+                    <img src="alior_bank.svg" alt="Alior Bank Logo">
+                    <div class="offer_details">
+                        <h3>Alior Bank - Lokata 6M</h3>
+                        <p>Czas trwania: 6 miesięcy</p>
+                        <p>Oprocentowanie: 3.8%</p>
+                        <p>Promocja ważna do: 15 kwietnia 2025</p>
+                    </div>
+                    <button class="offer_button">Wybierz ofertę</button>
+                </div>
+                <div class="offer">
+                    <img src="velo_bank.svg" alt="VeloBank Logo">
+                    <div class="offer_details">
+                        <h3>VeloBank - Lokata 6M</h3>
+                        <p>Czas trwania: 6 miesięcy</p>
+                        <p>Oprocentowanie: 3.8%</p>
+                        <p>Promocja ważna do: 15 kwietnia 2025</p>
+                    </div>
+                    <button class="offer_button">Wybierz ofertę</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer id="footer">
+        <p>&copy; 2025 TwojeFinanse24. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        function ChngAmt(charset){
+            let input = document.getElementById("deposit_amt");
+            let amtValue = parseInt(input.value.replace(/\s/g, '')) || 0; 
+
+            if (charset == '-') {
+                if (amtValue <= 10000) {
+                    input.value = (1000).toLocaleString('pl-PL') + ' zł'; 
+                } else {
+                    input.value = (amtValue - 10000).toLocaleString('pl-PL') + ' zł';
+                }
+            }
+
+            if (charset == '+') {
+                input.value = (amtValue + 10000).toLocaleString('pl-PL') + ' zł';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.getElementById('period_toggle');
+        const options = document.querySelectorAll('.select_options-option');
+        const inputField = document.getElementById('period_input_field');
+    
+        // Zamknij dropdown po wybraniu opcji
+        options.forEach(option => {
+            option.addEventListener('click', function() {
+                inputField.value = this.textContent;
+                toggle.checked = false; // Zamykamy dropdown
+            });
+        });
+    
+        // Zamknij dropdown po kliknięciu poza select-input
+        document.addEventListener('click', function(e) {
+            const selectInput = document.querySelector('.select-input');
+            if (!selectInput.contains(e.target)) {
+                toggle.checked = false;
+            }
+        });
+    });
+    
+</script>
+</body>
+</html>

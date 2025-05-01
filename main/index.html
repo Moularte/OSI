@@ -44,8 +44,8 @@
 				<div class="mega-dropdown">
 					<div class="dropdown-column">
 						<ul>
-							<li><a href="#">Konta oszczędnościowe</a></li>
-							<li><a href="#">Lokaty</a></li>
+							<li><a href="/rankOfDeposits/index.html">Konta oszczędnościowe</a></li>
+							<li><a href="/rankOfDeposits/index.html">Lokaty</a></li>
 							<li><a href="#">Kalkulator oszczędności</a></li>
 						</ul>
 					</div>
@@ -73,7 +73,7 @@
 					</div>
 				</div>
 			</li>
-			<li class="nav-link"><a href="#">Banki</a></li>
+			<li class="nav-link"><a href="/banks/index.html">Banki</a></li>
 		</ul>
 		<!-- Ikonka hamburgera (widoczna tylko na małych ekranach) -->
 		<button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
@@ -120,7 +120,7 @@
 					<p>W czasach rosnącej liczby cyberzagrożeń warto wiedzieć, jak zabezpieczyć swoje dane i pieniądze przed oszustami. Poznaj najczęstsze techniki wyłudzania informacji oraz sposoby na ich uniknięcie.</p>
 					<a href="#" class="full-article-text">Czytaj więcej</a>
 				</div>
-				<img src="images/oszustwa.webp" width="640" height="640" alt="Mężczyzna oraz kobieta siedzący przed laptopem. Wpatrzeni w kartę płatniczą, którą mężczyzna trzyma w dłoni">
+				<img src="/images/oszustwa.webp" width="640" height="640" alt="Mężczyzna oraz kobieta siedzący przed laptopem. Wpatrzeni w kartę płatniczą, którą mężczyzna trzyma w dłoni">
 			</article>
 
 			<article class="financial-article">
@@ -130,7 +130,7 @@
 					<a href="#">Zobacz ranking</a>
 					</div>
 					
-					<img src="images/zestawienie_kont_oszcz.webp" width="640" height="640" alt="Znak procenta w kolorze bialym. Dookoła znajdują się kwiaty. W tle kwitnące drzewo z białymi pąkami.">
+					<img src="/images/zestawienie_kont_oszcz.webp" width="640" height="640" alt="Znak procenta w kolorze bialym. Dookoła znajdują się kwiaty. W tle kwitnące drzewo z białymi pąkami.">
 			</article>
 
 			<article class="financial-article">
@@ -139,7 +139,7 @@
 					<p>W artykule znajdziesz omówienie podstawowych różnic między lokatą a kontem oszczędnościowym. Dowiedz się, która opcja będzie dla Ciebie lepsza.</p>
 					<a href="#">Czytaj więcej</a>
 				</div>
-				<img src="images/konto_a_lokata.webp" width="640" height="427" alt="Kobieta na białym tle z uniesionymi do góry rękami. Nad nimi dwa znaki zapytania. Jest niezdecydowana, która odpowiedź będzie właściwa.">  
+				<img src="/images/konto_a_lokata.webp" width="640" height="427" alt="Kobieta na białym tle z uniesionymi do góry rękami. Nad nimi dwa znaki zapytania. Jest niezdecydowana, która odpowiedź będzie właściwa.">  
 			</article>
 		</section>
 	</main>
@@ -147,12 +147,46 @@
 	<!-- Prawy panel-->
 	<aside id="right_col">
 		<section class="module">
-		<h3 class="module_title">Module</h3>
-		  <ul class="module_content">
-			<li>Średnie oprocentowanie lokat: <strong>5.4%</strong></li>
-			<li>Liczba dostępnych ofert: <strong>27</strong></li>
-			<li>Najpopularniejsze konto: <strong>ING OKO Bonus</strong></li>
-		  </ul>
+		<h3 class="module_title">Polecane</h3>
+		<div class="ad_slider">
+			<div class="ad_slide active">
+			  <div class="ad_category">Konto dla młodych</div>
+			  <div class="ad_content">
+				<div class="ad_headline">
+					<img src="/images/bankING.jpg" alt="ING logo" class="ad_logo">
+					<h3>Konto Mobi 18‑26</h3>
+				</div>
+				<div class="ad_details">
+					<ul class="list_of_details">
+						<li><strong>0 zł</strong> za otwarcie i prowadzenie konta.</li>
+				  		<li><strong>0 zł</strong> za kartę do konta.</li>
+				  		<li><strong>500 zł</strong> za założenie konta metodą “na selfie” w aplikacji Moje ING.</li>
+				  		<li><strong>0 zł</strong> za przelewy na telefon i krajowe złotówkowe przelewy przez Internet.</li>
+					</ul>
+				</div>
+			  </div>
+			  <a href="https://www.ing.pl/indywidualni/konta-osobiste/konto-mobi-18-26" target="_blank" class="ad_button">Zobacz ofertę</a>
+			</div>
+			<div class="ad_slide">
+				<div class="ad_category">Lokata</div>
+				<div class="ad_content">
+				  <div class="ad_headline">
+					  <img src="/images/credit-agricole.png" alt="Credit-Agricole logo" class="ad_logo">
+					  <h3>Lokata powitalna na 8%</h3>
+				  </div>
+				  <div class="ad_details">
+					  <ul class="list_of_details">
+						  	<li>Okres lokaty: <strong> 90 dni</strong>.</li>
+							<li>Zakres kwot: <strong> 1000-75000 zł</strong>.</li>
+							<li>Kapitalizacja odsetek: <strong> na koniec okresu</strong>.</li>
+							<li>Oferta ważna do: <strong> 30 kwietnia 2025 r</strong>.</li>
+					  </ul>
+				  </div>
+				</div>
+				<a href="https://www.ing.pl/indywidualni/konta-osobiste/konto-mobi-18-26" target="_blank" class="ad_button">Zobacz ofertę</a>
+			  </div>
+		  </div>
+		  
 		</section>
 	</aside>
 </div>
@@ -166,6 +200,17 @@
         const nav = document.getElementById("nav-links");
         nav.classList.toggle("show");
     }
+	
+	let currentSlide = 0;
+	const slides = document.querySelectorAll('.ad_slide');
+
+	function showNextSlide() {
+  		slides[currentSlide].classList.remove('active');
+  		currentSlide = (currentSlide + 1) % slides.length;
+  		slides[currentSlide].classList.add('active');
+	}
+
+	setInterval(showNextSlide, 7500);
 </script>
 </body>
 </html>
