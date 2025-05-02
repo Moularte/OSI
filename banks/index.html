@@ -185,6 +185,13 @@ document.querySelectorAll('.thumbnail').forEach(panel => {
   });
 });
 </script>
+<script>
+	const hamburger = document.querySelector('.hamburger');
+	const navLinks = document.getElementById('nav-links');
 
+	hamburger.addEventListener('click', () => {
+  		navLinks.classList.toggle('show');
+	});
+</script>
 </body>
 </html>
