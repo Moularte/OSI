@@ -29,7 +29,7 @@ body {
 }
 
 /* Nawigacja główna */
-nav ul#nav-links {
+nav ul #nav-links {
     list-style: none;
     display: flex;
     justify-content: center;

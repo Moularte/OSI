@@ -146,16 +146,16 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-document.querySelectorAll('.thumbnail ').forEach(panel => {
+document.querySelectorAll('.thumbnail').forEach(panel => {
   panel.addEventListener('click', () => {
-	const img = panel.querySelector('img');
-	if (!img) return;
+    const img = panel.querySelector('img');
+    if (!img) return;
 
-	const rect = img.getBoundingClientRect();
-	const clone = img.cloneNode();
-	clone.classList.add('image-fly');
-	
-	
+    const rect = img.getBoundingClientRect();
+    const clone = img.cloneNode();
+    clone.classList.add('image-fly');
+
+    // Ustawienie pozycji startowej i wymiarów
     clone.style.top = `${rect.top}px`;
     clone.style.left = `${rect.left}px`;
     clone.style.width = `${rect.width}px`;
@@ -172,15 +172,16 @@ document.querySelectorAll('.thumbnail ').forEach(panel => {
     const targetX = centerX - rect.left - rect.width / 2;
     const targetY = centerY - rect.top - rect.height / 2;
 
+    // Animacja powiększenia i obrotu
     requestAnimationFrame(() => {
       clone.style.transform = `translate(${targetX}px, ${targetY}px) scale(2) rotate(720deg)`;
     });
 
-    // Działa teraz, bo overlay jest widoczny
+    // Zamknięcie po kliknięciu w overlay
     overlay.addEventListener('click', () => {
       clone.remove();
       overlay.style.display = 'none';
-    }, { once: true }); // tylko jedno kliknięcie
+    }, { once: true });
   });
 });
 </script>
