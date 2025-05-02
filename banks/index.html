@@ -10,6 +10,7 @@
 	<meta property="og:url" content="https://twojefinanse24">
 	<title>TwojeFinanse24</title>
 	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
@@ -90,29 +91,99 @@
 </nav>
 
 <div id="container">
-	<h1>Banki</h1>
-    <ul class="gallery">
-        <li class="thumbnail"><img src="/images/alior_bank.svg" alt=""></li>
-        <li class="thumbnail"><img src="/images/bank_bnp_paribas.svg" alt=""></li>
-        <li class="thumbnail"><img src="/images/bank_millenium.svg" alt=""></li>
-        <li class="thumbnail"><img src="/images/bank_polski_pko.svg" alt=""></li>
-        <li class="thumbnail"><img src="/images/bank_santander.svg" alt=""></li>
-        <li class="thumbnail"><img src="/images/bankING.jpg" alt=""></li>
-        <li class="thumbnail"><img src="/images/credit-agricole.png" alt=""></li>
-        <li class="thumbnail"><img src="/images/mbank.svg" alt=""></li>
-        <li class="thumbnail"><img src="/images/nest_bank.png" alt=""></li>
-        <li class="thumbnail"><img src="/images/bank_pekao.jpg" alt=""></li>
-        <li class="thumbnail"><img src="/images/velo_bank.svg" alt=""></li>
-        <li class="thumbnail"><img src="/images/bank_pocztowy.jpg" alt=""></li>
-    </ul>
+	<div class="banks_list">
+		<h1 class="banks_list_header">Banki</h1>
+		<ul class="gallery">
+			<li class="thumbnail anim1">
+				<img src="/images/alior_bank.svg" alt="">
+			</li>
+			<li class="thumbnail anim2">
+				<img src="/images/bank_bnp_paribas.svg" alt="">
+			</li>
+			<li class="thumbnail anim3">
+				<img src="/images/bank_millenium.svg" alt="">
+			</li>
+			<li class="thumbnail anim4">
+				<img src="/images/bank_polski_pko.svg" alt="">
+			</li>
+			<li class="thumbnail anim5">
+				<img src="/images/bank_santander.svg" alt="">
+			</li>
+			<li class="thumbnail anim6">
+				<img src="/images/bank_ing.png" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="/images/credit-agricole.png" alt="">
+			</li>
+			<li class="thumbnail soft-anim">		
+				<img src="/images/mbank.svg" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="/images/nest_bank.png" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="/images/bank_pekao.jpg" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="/images/velo_bank.svg" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="/images/bank_pocztowy.jpg" alt="">
+			</li>
+		</ul>
+	</div>
+	
+
+	<div id="overlay">
+		<img id="enlarged-img" src="" alt="">
+	</div>
+	
 </div>
 
 <footer id="footer">
 	<p>&copy; 2025 TwojeFinanse24. Wszelkie prawa zastrzeżone</p>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  
+document.querySelectorAll('.thumbnail ').forEach(panel => {
+  panel.addEventListener('click', () => {
+	const img = panel.querySelector('img');
+	if (!img) return;
+
+	const rect = img.getBoundingClientRect();
+	const clone = img.cloneNode();
+	clone.classList.add('image-fly');
+	
+	
+    clone.style.top = `${rect.top}px`;
+    clone.style.left = `${rect.left}px`;
+    clone.style.width = `${rect.width}px`;
+    clone.style.height = `${rect.height}px`;
+
+    document.body.appendChild(clone);
+
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'block';
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    const targetX = centerX - rect.left - rect.width / 2;
+    const targetY = centerY - rect.top - rect.height / 2;
+
+    requestAnimationFrame(() => {
+      clone.style.transform = `translate(${targetX}px, ${targetY}px) scale(2) rotate(720deg)`;
+    });
+
+    // Działa teraz, bo overlay jest widoczny
+    overlay.addEventListener('click', () => {
+      clone.remove();
+      overlay.style.display = 'none';
+    }, { once: true }); // tylko jedno kliknięcie
+  });
+});
 </script>
+
 </body>
 </html>
