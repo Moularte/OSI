@@ -30,7 +30,7 @@ body {
 
 /* Nawigacja główna */
 #nav-links {
-  list-style: none;
+  list-style-type: none;
   display: flex;
   justify-content: center;
 	margin-right: 20px;
