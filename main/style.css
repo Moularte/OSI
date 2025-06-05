@@ -28,14 +28,12 @@ body {
     font-size: 2.5rem;
 }
 
-/* Nawigacja główna */
+
 #nav-links {
   list-style-type: none;
   display: flex;
   justify-content: center;
-	margin-right: 20px;
-	gap: 2rem;
-}
+
 
 .nav-link {
     margin: 0 15px;
@@ -391,6 +389,7 @@ body {
 	}
   
 	#nav-links {
+    list-style-type: none;
 	  flex-direction: column;
 	  gap: 10px;
 	}
@@ -432,6 +431,7 @@ body {
 
 /* Styl nawigacji */
 #nav-links {
+    list-style-type: none;
     display: flex;
     gap: 20px;
 }
@@ -455,6 +455,7 @@ body {
     }
 
     #nav-links.show {
+        list-style-type: none;
         display: flex;
     }
 
