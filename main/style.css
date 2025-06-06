@@ -28,14 +28,15 @@ body {
     font-size: 2.5rem;
 }
 
-
-#nav-links {
+/* Nawigacja główna */
+nav ul #nav-links {
   list-style-type: none;
   display: flex;
   justify-content: center;
-
-
-.nav-link {
+	margin-right: 20px;
+	gap: 2rem;
+}
+v-link {
     margin: 0 15px;
     position: relative;
 }
@@ -455,8 +456,7 @@ body {
     }
 
     #nav-links.show {
-        list-style-type: none;
-        display: flex;
+            list-style-type: none;     display: flex;
     }
 
     #nav-links a {
