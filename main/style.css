@@ -26,6 +26,7 @@ body {
     text-decoration: none;
     color: white;
     font-size: 2.5rem;
+    font-weight: 700;
 }
 
 /* Nawigacja główna */
@@ -210,7 +211,7 @@ v-link {
     border-bottom: 1px solid #ccc;
 }
 .article_title {
-    font-size: 1.5em;
+    font-size: 2.5em;
     margin-bottom: 20px;
     color: #004080;
 }
